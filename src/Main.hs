@@ -80,6 +80,7 @@ import qualified Problem075
 import qualified Problem076
 import qualified Problem077
 import qualified Problem078
+import qualified Problem079
 
 solution "001" = Problem001.solutionFrom
 solution "002" = Problem002.solutionFrom
@@ -159,6 +160,7 @@ solution "075" = Problem075.solutionFrom
 solution "076" = Problem076.solutionFrom
 solution "077" = Problem077.solutionFrom
 solution "078" = Problem078.solutionFrom
+solution "079" = Problem079.solutionFrom
 
 main = do
 	(num:args) <- getArgs
