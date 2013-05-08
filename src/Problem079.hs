@@ -8,12 +8,10 @@ module Problem079 where
 
 import Data.List ( sort, nub )
 
-import Base ( unwrap )
-
 solutionFrom [] = solutionFrom ["data/Problem079.keylog.txt"]
-solutionFrom [filenameS] = return $ show $ solution $ parseFile filenameS
-
-parseFile filename = lines $ unwrap $ readFile filename
+solutionFrom [filenameS] = do
+	text <- readFile filenameS
+	return $ show $ solution $ lines $ text
 
 solution :: [String] -> Integer
 solution captures =

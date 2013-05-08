@@ -16,12 +16,14 @@ import Base
 import Sort
 
 solutionFrom [] = solutionFrom ["data/Problem022.data"]
-solutionFrom [filenameS] = return $ show $ solution filenameS
+solutionFrom [filenameS] = do
+	text <- readFile filenameS
+	return $ show $ solution text
 
-solution filename = fromIntegral $ sum scores where
+solution text = fromIntegral $ sum scores where
 	scores = map pairScore $ pairs
 	pairScore (n, i) = i * nameScore n
 	nameScore n = sum $ map charScore $ n
 	charScore c = ord c - ord 'A' + 1
 	pairs = zip (quicksort names) ([1 .. ])
-	names = map (filter (/= '"')) $ splitOn ',' $ unwrap $ readFile filename
+	names = map (filter (/= '"')) $ splitOn ',' $ text

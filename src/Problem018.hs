@@ -9,15 +9,15 @@
 module Problem018 where
 
 import Data.List (foldr1)
-import System.IO.Unsafe (unsafePerformIO)
 
 solutionFrom [] = solutionFrom ["data/Problem018.data"]
-solutionFrom [filenameS] = return $ show $ solution filenameS
+solutionFrom [filenameS] = do
+	text <- readFile filenameS
+	return $ show $ solution text
 
-triangle filename = map (map read) $ map words $ lines $
-	unsafePerformIO $ readFile filename
+triangle text = map (map read) $ map words $ lines $ text
 
 reduce a b = zipWith (+) a b' where
 	b' = zipWith max b (tail b)
 
-solution filename = head $ foldr1 reduce $ triangle filename
+solution text = head $ foldr1 reduce $ triangle text

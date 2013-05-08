@@ -12,11 +12,13 @@ module Problem054 where
 import Data.Maybe ( fromJust )
 import Data.List ( findIndex, groupBy )
 
-import Base ( (|>), on, unwrap )
+import Base ( (|>), on )
 import Sort ( quicksort )
 
 solutionFrom [] = solutionFrom ["data/Problem054.poker.txt"]
-solutionFrom [filenameS] = return $ show $ solution filenameS
+solutionFrom [filenameS] = do
+	text <- readFile filenameS
+	return $ show $ solution text
 
 data Card = Card { face :: Integer , suit :: Integer } deriving (Eq, Show)
 instance Ord Card where
@@ -35,7 +37,7 @@ data Game = Game [Round]
 
 readPoker pokerRaw = map (\ (a, b) -> [Hand $ quicksort a, Hand $ quicksort b]) $ map (splitAt 5) $ map (map readCard) $ map words $ lines $ pokerRaw
 
-solution filename = fromIntegral $ length $ filter (== 0) $ map winner $ readPoker $ unwrap $ readFile filename
+solution text = fromIntegral $ length $ filter (== 0) $ map winner $ readPoker $ text
 
 winner round = fst $ foldl1 maxHand $ zip [0..] round
 	where

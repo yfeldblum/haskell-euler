@@ -14,7 +14,6 @@
 module Problem019 where
 
 import Data.List (foldr1)
-import System.IO.Unsafe (unsafePerformIO)
 
 import Base
 

@@ -13,14 +13,16 @@ import Data.Word ( Word8 )
 import Data.Bits ( xor )
 import qualified Data.Char as Char ( chr, ord )
 
-import Base ( splitOn, unwrap )
+import Base ( splitOn )
 
 solutionFrom [] = solutionFrom ["data/Problem059.ciphertext.txt"]
-solutionFrom [filenameS] = return $ show $ solution filenameS
+solutionFrom [filenameS] = do
+	text <- readFile filenameS
+	return $ show $ solution text
 
 readCiphertext f = map (fromIntegral :: Integer -> Word8) $ map read $ splitOn ',' f
 
-solution filename = sum $ map toInteger $ head $
+solution text = sum $ map toInteger $ head $
 	[ plaintext
 	| key <- keys
 	, let plaintext = decrypt key ciphertext
@@ -28,7 +30,7 @@ solution filename = sum $ map toInteger $ head $
 	, " and " `isInfixOf` plaintextString
 	]
 	where
-	ciphertext = readCiphertext $ unwrap $ readFile $ filename
+	ciphertext = readCiphertext $ text
 
 keyAlphabet = map (fromInteger . fromIntegral . Char.ord) ['a'..'z']
 keys = [ [a,b,c] | a <- keyAlphabet, b <- keyAlphabet, c <- keyAlphabet ]

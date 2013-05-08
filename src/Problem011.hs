@@ -14,7 +14,9 @@ import Data.Array
 import System.IO.Unsafe
 
 solutionFrom [] = solutionFrom ["data/Problem011.data"]
-solutionFrom [filenameS] = return $ show $ solution $ readGrid $ filenameS
+solutionFrom [filenameS] = do
+	text <- readFile filenameS
+	return $ show $ solution $ readGrid $ text
 
 solution nums = maximum $ [horiz, verti, fdiag, bdiag] where
 	horiz = maximum $ map product $ map (map numgen) $ map horizgen $ range ((0, 0), (19, 16))
@@ -30,4 +32,4 @@ solution nums = maximum $ [horiz, verti, fdiag, bdiag] where
 	arrayb = (pair 0, pair 19)
 	narray = array arrayb [ (idx, numgen idx) | idx <- range arrayb ]
 
-readGrid fn = map (map read) $ map words $ lines $ unsafePerformIO $ readFile fn
+readGrid text = map (map read) $ map words $ lines $ text

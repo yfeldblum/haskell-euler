@@ -14,11 +14,13 @@ import Rising
 import Juke
 
 solutionFrom [] = solutionFrom ["data/Problem042.data"]
-solutionFrom [filenameS] = return $ show $ solution filenameS
+solutionFrom [filenameS] = do
+	text <- readFile filenameS
+	return $ show $ solution text
 
-solution filename = length $ filter (isTriangle . getValue) $ theWords filename
+solution text = length $ filter (isTriangle . getValue) $ theWords text
 
-theWords filename = map (filter (/= '"')) $ splitOn ',' $ unwrap $ readFile filename
+theWords text = map (filter (/= '"')) $ splitOn ',' $ text
 
 class HasValue a where
 	getValue :: (Num n) => a -> n

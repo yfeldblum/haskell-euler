@@ -8,10 +8,10 @@
 
 module Problem067 where
 
-import Base ( unwrap )
-
 solutionFrom [] = solutionFrom ["data/Problem067.triangle.txt"]
-solutionFrom [filenameS] = return $ show $ solution $ parseTriangle $ unwrap $ readFile $ filenameS
+solutionFrom [filenameS] = do
+	text <- readFile filenameS
+	return $ show $ solution $ parseTriangle $ text
 
 parseTriangle = map (map read) . map words . lines
 
