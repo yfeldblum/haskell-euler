@@ -14,7 +14,7 @@ import Data.List ( sort, groupBy, sortBy )
 import Base ( (|>), on )
 import Juke ( itol )
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = cuber * cuber * cuber
 	where

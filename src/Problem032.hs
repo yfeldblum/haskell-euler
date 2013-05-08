@@ -14,9 +14,9 @@ import Data.List (nub)
 import Juke (ltoi, permutations)
 
 solutionFrom [] = solutionFrom ["9"]
-solutionFrom [kS] = solutionGen (read kS)
+solutionFrom [kS] = return $ show $ solutionGen (read kS)
 
-solutionGen k = fromIntegral $ sum $ nub $ concat $ map (g k) $ permutations $ [1 .. k]
+solutionGen k = sum $ nub $ concat $ map (g k) $ permutations $ [1 .. k]
 
 g len list =
 	[ c

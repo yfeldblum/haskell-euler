@@ -12,7 +12,7 @@ module Problem056 where
 import Juke ( itol )
 
 solutionFrom [] = solutionFrom ["10", "100"]
-solutionFrom [baseS, maxS] = solutionGen (read baseS) (read maxS)
+solutionFrom [baseS, maxS] = return $ show $ solutionGen (read baseS) (read maxS)
 
 solutionGen base max = maximum $
 	[ sum $ itol base c

@@ -12,7 +12,7 @@ import Juke(coprime)
 
 solutionFrom [] = solutionFrom ["1000"]
 solutionFrom (maxnS:[]) = solutionFrom [maxnS, "3", "5"]
-solutionFrom (maxnS:numsS) = solutionGen (read maxnS) (map read numsS)
+solutionFrom (maxnS:numsS) = return $ show $ solutionGen (read maxnS) (map read numsS)
 
 solutionGen maxn nums = sum $ filter isKept $ [0 .. maxn - 1] where
 	isKept k = not $ all (coprime k) $ nums

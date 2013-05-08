@@ -13,7 +13,7 @@ import Data.List ( sort, group, nub )
 import Base ( (|>), on )
 import Juke ( coprime, isqrt, factors' )
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution =
 	triples 1500000
@@ -22,7 +22,6 @@ solution =
 	|>	group
 	|>	filter ((== 1) . length)
 	|>	length
-	|>	fromIntegral
 
 t1 (a, b, c) = (a - 2 * b + 2 * c, 2 * a - b + 2 * c, 2 * a - 2 * b + 3 * c)
 t2 (a, b, c) = (a + 2 * b + 2 * c, 2 * a + b + 2 * c, 2 * a + 2 * b + 3 * c)

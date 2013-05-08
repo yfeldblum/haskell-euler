@@ -18,7 +18,7 @@ import Base ( (|>) )
 import Juke ( primes'' , itol , ltoi )
 
 solutionFrom [] = solutionFrom ["10", "8"]
-solutionFrom [baseS, familySizeS] = solutionGen (read baseS) (read familySizeS)
+solutionFrom [baseS, familySizeS] = return $ show $ solutionGen (read baseS) (read familySizeS)
 
 solutionGen base familySize =
 	primes

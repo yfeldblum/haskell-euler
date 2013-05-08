@@ -18,7 +18,7 @@ import Data.List (delete)
 import Juke (ltoi, itol)
 
 solutionFrom [] = solutionFrom ["10"]
-solutionFrom [baseS] = solutionGen (read baseS)
+solutionFrom [baseS] = return $ show $ solutionGen (read baseS)
 
 solutionGen base = snd $ reduce $ foldl mult (1, 1) $ fractions base
 

@@ -12,7 +12,7 @@ module Problem012 where
 import Juke (multiFactors)
 
 solutionFrom [] = solutionFrom ["500"]
-solutionFrom [maxnS] = solutionGen (read maxnS)
+solutionFrom [maxnS] = return $ show $ solutionGen (read maxnS)
 
 solutionGen maxn = fst $ head $ filter tflValid $ map tfactors $ tnumbers where
 	tflValid = \ (n, cnt) -> cnt > maxn

@@ -12,7 +12,7 @@ module Problem036 where
 import Juke (itol)
 
 solutionFrom [] = solutionFrom ["2", "10", "1000000"]
-solutionFrom args = solutionGen (map read (init args)) (read (last args))
+solutionFrom args = return $ show $ solutionGen (map read (init args)) (read (last args))
 
 solutionGen bases maxn = sum $ filter (good bases) $ [1 .. maxn - 1]
 

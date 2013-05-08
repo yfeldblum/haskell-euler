@@ -17,7 +17,7 @@ import Data.List (tails, inits)
 import Juke (primes', itol, ltoi)
 import qualified Rising
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = sum $ take 11 $ dropWhile (< 10) $ truncPrimes 10 $ primes' where
 

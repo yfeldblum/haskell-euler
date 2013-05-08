@@ -11,6 +11,6 @@ module Problem025 where
 import Juke (fibonaccis)
 
 solutionFrom [] = solutionFrom ["10", "1000"]
-solutionFrom [baseS, digitsS] = solutionGen (read baseS) (read digitsS)
+solutionFrom [baseS, digitsS] = return $ show $ solutionGen (read baseS) (read digitsS)
 
 solutionGen base digits = snd $ head $ [ (i, n) | (i, n) <- zip [0..] fibonaccis, n >= base ^ (digits - 1) ]

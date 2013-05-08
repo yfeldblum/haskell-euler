@@ -14,9 +14,9 @@ import Data.List (inits, tails)
 import Juke (primes', isPrime, itol, ltoi)
 
 solutionFrom [] = solutionFrom ["10", "1000000"]
-solutionFrom [baseS, maxnS] = solutionGen (read baseS) (read maxnS)
+solutionFrom [baseS, maxnS] = return $ show $ solutionGen (read baseS) (read maxnS)
 
-solutionGen base maxn = fromIntegral $ length $ filter (good base) $ takeWhile (< maxn) $ primes'
+solutionGen base maxn = length $ filter (good base) $ takeWhile (< maxn) $ primes'
 
 good base n = and' $ map (isPrime primes') $ digitRotations base $ n
 

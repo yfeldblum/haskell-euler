@@ -14,7 +14,7 @@ import Data.Array
 import System.IO.Unsafe
 
 solutionFrom [] = solutionFrom ["data/Problem011.data"]
-solutionFrom [filenameS] = solution $ readGrid $ filenameS
+solutionFrom [filenameS] = return $ show $ solution $ readGrid $ filenameS
 
 solution nums = maximum $ [horiz, verti, fdiag, bdiag] where
 	horiz = maximum $ map product $ map (map numgen) $ map horizgen $ range ((0, 0), (19, 16))

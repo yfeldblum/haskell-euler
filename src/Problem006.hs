@@ -10,7 +10,7 @@
 module Problem006 where
 
 solutionFrom [] = solutionFrom ["100"]
-solutionFrom [maxnS] = solutionGen (read maxnS)
+solutionFrom [maxnS] = return $ show $ solutionGen (read maxnS)
 
 solutionGen maxn = abs $ (sum $ map square $ nums) - (square $ sum $ nums) where
 	nums = [1 .. maxn]

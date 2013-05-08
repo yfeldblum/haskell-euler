@@ -21,7 +21,7 @@ import Juke (primes')
 import Base
 
 solutionFrom [] = solutionFrom ["1000", "1000"]
-solutionFrom [maxaS, maxbS] = solutionGen (read maxaS) (read maxbS)
+solutionFrom [maxaS, maxbS] = return $ show $ solutionGen (read maxaS) (read maxbS)
 
 newtype K a = K a deriving (Eq)
 instance Wrapped K where unwrap (K a) = a

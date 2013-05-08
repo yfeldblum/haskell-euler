@@ -15,7 +15,7 @@ import Data.Maybe ( fromJust, isJust )
 import Base ( (|>) )
 import Juke ( itol, isqrt )
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = [1..100] |> map krasket |> justs |> sum
 

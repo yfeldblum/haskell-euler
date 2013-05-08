@@ -12,7 +12,7 @@ import Base ( (|>), y, dp )
 import PartitionFunction ( p' )
 
 solutionFrom [] = solutionFrom ["1000000"]
-solutionFrom [nS] = solutionGen (read nS)
+solutionFrom [nS] = return $ show $ solutionGen (read nS)
 
 solutionGen n = [1 .. maxk] |> filter good |> head
 	where

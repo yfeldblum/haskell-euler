@@ -16,7 +16,7 @@ module Problem014 where
 import Data.List (foldl1')
 
 solutionFrom [] = solutionFrom ["1000000"]
-solutionFrom [maxnS] = solutionGen (read maxnS)
+solutionFrom [maxnS] = return $ show $ solutionGen (read maxnS)
 
 {-
 solutionGen maxn = fst $ maximumx pred $ map pair $ [1 .. maxn - 1] where

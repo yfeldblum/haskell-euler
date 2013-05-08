@@ -11,10 +11,11 @@ import Data.List ( sort, nub )
 import Base ( unwrap )
 
 solutionFrom [] = solutionFrom ["data/Problem079.keylog.txt"]
-solutionFrom [filenameS] = solution $ parseFile filenameS
+solutionFrom [filenameS] = return $ show $ solution $ parseFile filenameS
 
 parseFile filename = lines $ unwrap $ readFile filename
 
+solution :: [String] -> Integer
 solution captures =
 	read $ head $ filter (matchesCaptures captures) $ guesses alphabet
 	where

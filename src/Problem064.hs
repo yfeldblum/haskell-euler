@@ -14,7 +14,7 @@ import Base ( (|>) )
 import Juke ( isqrt )
 
 solutionFrom [] = solutionFrom ["10000"]
-solutionFrom [maxS] = solutionGen (read maxS)
+solutionFrom [maxS] = return $ show $ solutionGen (read maxS)
 
 solutionGen max =
 	[1..max]
@@ -24,7 +24,6 @@ solutionGen max =
 	|>	map findMinCycle
 	|>	filter (odd . length)
 	|>	length
-	|>	fromIntegral
 
 step (a, b, c, d) =
 	let m = isqrt c in

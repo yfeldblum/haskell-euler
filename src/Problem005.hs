@@ -10,6 +10,6 @@
 module Problem005 where
 
 solutionFrom [] = solutionFrom ["20"]
-solutionFrom [maxnS] = solutionGen (read maxnS)
+solutionFrom [maxnS] = return $ show $ solutionGen (read maxnS)
 
 solutionGen maxn = foldl1 lcm [1 .. maxn]

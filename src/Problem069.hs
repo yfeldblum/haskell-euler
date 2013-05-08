@@ -18,7 +18,7 @@ import Data.Ratio
 import Base ( (|>), on, dp )
 
 solutionFrom [] = solutionFrom ["1000000"]
-solutionFrom [maxbS] = solutionGen (read maxbS)
+solutionFrom [maxbS] = return $ show $ solutionGen (read maxbS)
 
 solutionGen maxb =
 	[1..maxb]

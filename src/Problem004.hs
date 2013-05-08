@@ -12,7 +12,7 @@ module Problem004 where
 import Data.Maybe (catMaybes)
 
 solutionFrom [] = solutionFrom ["10"]
-solutionFrom [baseS] = solutionGen (read baseS)
+solutionFrom [baseS] = return $ show $ solutionGen (read baseS)
 
 solutionGen base = head $ filter isLegal $ palindromes where
 	palindromes = [ fromList [a, b, c, c, b, a] | (a, b, c) <- triples ] where

@@ -13,6 +13,6 @@ import Data.Char (digitToInt)
 import Juke (factorial)
 
 solutionFrom [] = solutionFrom ["100"]
-solutionFrom [nS] = solutionGen (read nS)
+solutionFrom [nS] = return $ show $ solutionGen (read nS)
 
-solutionGen n = fromIntegral $ sum $ map digitToInt $ show $ factorial $ n
+solutionGen n = sum $ map digitToInt $ show $ factorial $ n

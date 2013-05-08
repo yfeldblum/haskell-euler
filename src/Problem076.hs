@@ -13,7 +13,7 @@ import Debug.Trace
 import Base ( (|>), y, dp )
 
 solutionFrom [] = solutionFrom ["100"]
-solutionFrom [nS] = solutionGen (read nS)
+solutionFrom [nS] = return $ show $ solutionGen (read nS)
 
 solutionGen n = s n - 1 where
 	s = summariesCx

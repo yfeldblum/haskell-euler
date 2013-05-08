@@ -15,9 +15,9 @@ module Problem055 where
 
 import Juke ( itol, ltoi )
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
-solution = fromIntegral $ length $ filter (isLychrel 10) $ [1..9999]
+solution = length $ filter (isLychrel 10) $ [1..9999]
 
 step base n = n + r
 	where

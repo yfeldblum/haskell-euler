@@ -20,7 +20,7 @@ import Juke (factors')
 import qualified Rising
 
 solutionFrom [] = solutionFrom ["28123"]
-solutionFrom [maxnS] = solutionGen (read maxnS)
+solutionFrom [maxnS] = return $ show $ solutionGen (read maxnS)
 
 d n = (sum $ factors' $ n) - n
 

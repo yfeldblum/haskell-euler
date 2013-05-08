@@ -11,7 +11,7 @@ module Problem003 where
 import Juke (primes, primeFactors, divides)
 
 solutionFrom [] = solutionFrom ["600851475143"]
-solutionFrom [nS] = solutionFast (read nS)
+solutionFrom [nS] = return $ show $ solutionFast (read nS)
 
 solutionSlow n = last $ filter (`divides` n) $ takeWhile (< n) $ primes
 

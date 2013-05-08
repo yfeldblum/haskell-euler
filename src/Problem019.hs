@@ -18,7 +18,7 @@ import System.IO.Unsafe (unsafePerformIO)
 
 import Base
 
-solutionFrom [] = fromIntegral solution
+solutionFrom [] = return $ show $ solution
 
 solution =
 	Date Mon 1 Jan 1900

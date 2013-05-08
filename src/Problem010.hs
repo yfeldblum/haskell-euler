@@ -11,6 +11,6 @@ module Problem010 where
 import Juke (primes'')
 
 solutionFrom [] = solutionFrom ["2000000"]
-solutionFrom [maxnS] = solutionGen (read maxnS)
+solutionFrom [maxnS] = return $ show $ solutionGen (read maxnS)
 
 solutionGen maxn = sum $ takeWhile (< maxn) $ primes''

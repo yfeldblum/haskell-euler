@@ -11,6 +11,6 @@ module Problem007 where
 import Juke (primes)
 
 solutionFrom [] = solutionFrom ["10001"]
-solutionFrom [nS] = solutionGen (read nS)
+solutionFrom [nS] = return $ show $ solutionGen (read nS)
 
 solutionGen n = primes !! (n - 1)

@@ -12,6 +12,7 @@ module Problem013 where
 import System.IO.Unsafe
 
 solutionFrom [] = solutionFrom ["data/Problem013.data"]
-solutionFrom [filenameS] = solution $ filenameS
+solutionFrom [filenameS] = return $ show $ solution $ filenameS
 
+solution :: String -> Integer
 solution filename = read $ take 10 $ show $ sum $ map read $ lines $ unsafePerformIO $ readFile $ filename

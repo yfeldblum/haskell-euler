@@ -12,7 +12,7 @@ import Data.Ratio
 
 import Base ( (|>), on )
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = solutionGen (3%7) 1000000
 

@@ -10,6 +10,6 @@ import Base
 import Rising
 import Juke
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = (`rem` (10^10)) $ sum $ map (\ n -> n^n) $ [1 .. 1000]

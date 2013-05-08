@@ -16,7 +16,7 @@ import qualified Data.Char as Char ( chr, ord )
 import Base ( splitOn, unwrap )
 
 solutionFrom [] = solutionFrom ["data/Problem059.ciphertext.txt"]
-solutionFrom [filenameS] = solution filenameS
+solutionFrom [filenameS] = return $ show $ solution filenameS
 
 readCiphertext f = map (fromIntegral :: Integer -> Word8) $ map read $ splitOn ',' f
 

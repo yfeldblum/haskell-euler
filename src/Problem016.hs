@@ -11,6 +11,6 @@ module Problem016 where
 import Data.Char (digitToInt)
 
 solutionFrom [] = solutionFrom ["2", "1000"]
-solutionFrom [baseS, expS] = solutionGen (read baseS) (read expS)
+solutionFrom [baseS, expS] = return $ show $ solutionGen (read baseS) (read expS)
 
 solutionGen base exp = fromIntegral $ sum $ map digitToInt $ show $ base^exp

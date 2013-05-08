@@ -12,6 +12,7 @@ module Problem024 where
 import Juke (permutations)
 
 solutionFrom [] = solutionFrom ["10", "1000000"]
-solutionFrom [nS, kS] = solutionGen (read nS) (read kS)
+solutionFrom [nS, kS] = return $ show $ solutionGen (read nS) (read kS)
 
+solutionGen :: Int -> Int -> Integer
 solutionGen n k = read $ concat $ map show $ (!! (k - 1)) $ permutations $ [0 .. n - 1]

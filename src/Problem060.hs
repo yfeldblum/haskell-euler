@@ -13,7 +13,7 @@ import qualified Juke ( primes'', isPrime )
 import Juke ( itol, ltoi )
 
 solutionFrom [] = solutionFrom ["10", "5"]
-solutionFrom [baseS, sizeS] = solutionGen (read baseS) (read sizeS)
+solutionFrom [baseS, sizeS] = return $ show $ solutionGen (read baseS) (read sizeS)
 
 primes = Juke.primes''
 isPrime = Juke.isPrime primes

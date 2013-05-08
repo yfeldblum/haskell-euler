@@ -83,6 +83,7 @@ import qualified Problem078
 import qualified Problem079
 import qualified Problem080
 
+solution :: String -> [String] -> IO String
 solution "001" = Problem001.solutionFrom
 solution "002" = Problem002.solutionFrom
 solution "003" = Problem003.solutionFrom
@@ -166,4 +167,5 @@ solution "080" = Problem080.solutionFrom
 
 main = do
 	(num:args) <- getArgs
-	putStrLn $ show $ solution num args
+	s <- solution num args
+	putStrLn s

@@ -16,7 +16,7 @@ import Base
 import Sort
 
 solutionFrom [] = solutionFrom ["data/Problem022.data"]
-solutionFrom [filenameS] = solution filenameS
+solutionFrom [filenameS] = return $ show $ solution filenameS
 
 solution filename = fromIntegral $ sum scores where
 	scores = map pairScore $ pairs

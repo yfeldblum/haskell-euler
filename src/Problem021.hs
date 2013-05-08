@@ -13,7 +13,7 @@ module Problem021 where
 import Juke (factors')
 
 solutionFrom [] = solutionFrom ["10000"]
-solutionFrom [maxnS] = solutionGen (read maxnS)
+solutionFrom [maxnS] = return $ show $ solutionGen (read maxnS)
 
 solutionGen maxn = sum $ filter amicable $ [1 .. maxn - 1]
 

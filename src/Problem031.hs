@@ -12,9 +12,9 @@ module Problem031 where
 
 import Data.List (nub)
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
-solution = fromIntegral $ length $ foldl replacements' [coins] $ tail values
+solution = length $ foldl replacements' [coins] $ tail values
 
 replacements' coinsl value = concat $ map (flip replacements value) $ coinsl
 

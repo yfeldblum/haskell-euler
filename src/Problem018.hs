@@ -12,7 +12,7 @@ import Data.List (foldr1)
 import System.IO.Unsafe (unsafePerformIO)
 
 solutionFrom [] = solutionFrom ["data/Problem018.data"]
-solutionFrom [filenameS] = solution filenameS
+solutionFrom [filenameS] = return $ show $ solution filenameS
 
 triangle filename = map (map read) $ map words $ lines $
 	unsafePerformIO $ readFile filename

@@ -11,7 +11,7 @@ module Problem017 where
 
 import Data.Char (isAlpha)
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = fromIntegral $ sum $ map countLetters $ map toWords $ map show $ [1 .. 1000]
 

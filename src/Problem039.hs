@@ -13,7 +13,7 @@ module Problem039 where
 
 import Base
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 newtype K a = K a deriving (Eq)
 instance Wrapped K where unwrap (K a) = a

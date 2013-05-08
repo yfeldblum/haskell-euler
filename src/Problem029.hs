@@ -11,6 +11,6 @@ module Problem029 where
 import Data.List (nub)
 
 solutionFrom [] = solutionFrom ["100"]
-solutionFrom [maxnS] = solutionGen (read maxnS)
+solutionFrom [maxnS] = return $ show $ solutionGen (read maxnS)
 
 solutionGen maxn = fromIntegral $ length $ nub $ [ a ^ b | a <- [2 .. maxn], b <- [2 .. maxn] ]

@@ -14,9 +14,9 @@ import Data.Array ((!), array, range)
 
 import Juke (factorial, itol)
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
-solution = fromIntegral $ sum' $ filter good $ [3 .. 2540160]
+solution = sum' $ filter good $ [3 .. 2540160]
 
 good n = (n ==) $ sum' $ map factorial' $ itol 10 $ n
 

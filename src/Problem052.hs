@@ -14,7 +14,7 @@ import Data.List ( sort )
 import Juke ( itol )
 
 solutionFrom [] = solutionFrom ["10", "6"]
-solutionFrom [baseS, topS] = solutionGen (read baseS) (read topS)
+solutionFrom [baseS, topS] = return $ show $ solutionGen (read baseS) (read topS)
 
 solutionGen base top = head $ filter (multiplesHaveSameDigits base top) $ [1..]
 

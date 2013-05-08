@@ -10,6 +10,6 @@ import Base
 import Rising
 import Juke
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = (!! 2) $ Rising.intersect (scanl1 (+) [1, 4 ..]) (scanl1 (+) [1, 5 ..])

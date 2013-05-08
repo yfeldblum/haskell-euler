@@ -13,7 +13,7 @@ import Data.Ratio
 import Base ( (|>) )
 import Juke ( itol )
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = sum $ itol 10 $ numerator $ converge eValues 100
 

@@ -14,7 +14,7 @@ import Data.List ( sort )
 import Base
 import Juke
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 {-
 solution =

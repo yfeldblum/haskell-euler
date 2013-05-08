@@ -9,7 +9,7 @@
 
 module Problem009 where
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = head products where
 	products = [ a * b * c | (a, b, c) <- tuples ]

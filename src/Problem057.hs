@@ -14,7 +14,7 @@ import Base ( (|>) )
 import Juke ( itol )
 
 solutionFrom [] = solutionFrom ["10", "1000"]
-solutionFrom [baseS, itersS] = solutionGen (read baseS) (read itersS)
+solutionFrom [baseS, itersS] = return $ show $ solutionGen (read baseS) (read itersS)
 
 solutionGen base iters =
 	(2%1)
@@ -24,4 +24,3 @@ solutionGen base iters =
 	|>	take iters
 	|>	filter (\ n -> (length $ itol base $ numerator $ n) > (length $ itol base $ denominator $ n))
 	|>	length
-	|>	fromIntegral

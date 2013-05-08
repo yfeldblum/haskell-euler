@@ -13,7 +13,7 @@ module Problem028 where
 import Data.List (foldl')
 
 solutionFrom [] = solutionFrom ["1001"]
-solutionFrom [xS] = solutionGen (read xS)
+solutionFrom [xS] = return $ show $ solutionGen (read xS)
 
 fStep = doubleUp [4, 8 ..] where
 	doubleUp [] = []

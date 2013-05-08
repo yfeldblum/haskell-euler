@@ -12,9 +12,9 @@ module Problem053 where
 import Juke ( partitions )
 
 solutionFrom [] = solutionFrom ["100", "1000000"]
-solutionFrom [ncapS, valminS] = solutionGen (read ncapS) (read valminS)
+solutionFrom [ncapS, valminS] = return $ show $ solutionGen (read ncapS) (read valminS)
 
-solutionGen ncap valmin = fromIntegral $ length values
+solutionGen ncap valmin = length values
 	where
 	values =
 		[ p

@@ -12,7 +12,7 @@ import Base ( (|>), y, dp )
 import qualified Juke ( primes'' )
 
 solutionFrom [] = solutionFrom ["5000"]
-solutionFrom [nS] = solutionGen (read nS)
+solutionFrom [nS] = return $ show $ solutionGen (read nS)
 
 solutionGen n = [1 ..] |> filter good |> head
 	where

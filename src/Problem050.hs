@@ -15,7 +15,7 @@ import Sort
 import Rising
 import Juke
 
-solutionFrom [] = solution'
+solutionFrom [] = return $ show $ solution'
 
 solution = mks primes''
 

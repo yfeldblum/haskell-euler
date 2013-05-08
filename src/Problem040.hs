@@ -9,7 +9,7 @@ module Problem040 where
 import Base
 import Juke
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = product $ take 7 $ ds
 

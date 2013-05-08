@@ -14,9 +14,9 @@ import Rising
 import Juke
 
 solutionFrom [] = solutionFrom ["data/Problem042.data"]
-solutionFrom [filenameS] = solution filenameS
+solutionFrom [filenameS] = return $ show $ solution filenameS
 
-solution filename = fromIntegral $ length $ filter (isTriangle . getValue) $ theWords filename
+solution filename = length $ filter (isTriangle . getValue) $ theWords filename
 
 theWords filename = map (filter (/= '"')) $ splitOn ',' $ unwrap $ readFile filename
 

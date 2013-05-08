@@ -14,7 +14,7 @@ import Data.List ( maximumBy )
 import Base ( (|>), on )
 import Juke ( isqrt )
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = fst $ maximumBy (compare `on` snd) $ solutions 1000
 

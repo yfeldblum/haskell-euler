@@ -16,7 +16,7 @@ import Base ( (|>), on, unwrap )
 import Sort ( quicksort )
 
 solutionFrom [] = solutionFrom ["data/Problem054.poker.txt"]
-solutionFrom [filenameS] = solution filenameS
+solutionFrom [filenameS] = return $ show $ solution filenameS
 
 data Card = Card { face :: Integer , suit :: Integer } deriving (Eq, Show)
 instance Ord Card where

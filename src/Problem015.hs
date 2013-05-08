@@ -12,7 +12,7 @@ module Problem015 where
 import Base (dp)
 
 solutionFrom [] = solutionFrom ["20", "20"]
-solutionFrom [wS, hS] = solutionGen (read wS) (read hS)
+solutionFrom [wS, hS] = return $ show $ solutionGen (read wS) (read hS)
 
 solutionGen w h = dp ((0, 0), (w, h)) sol (w, h)
 

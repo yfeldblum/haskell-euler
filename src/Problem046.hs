@@ -10,7 +10,7 @@ import Base
 import Rising
 import Juke
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = head solutions
 

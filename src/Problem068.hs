@@ -12,7 +12,7 @@ import Data.List ( sort )
 
 import Juke ( ltoi, permutations )
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = last $ sort $ map (ltoi 10) $ map expandTen $ map makeString $ patterns
 

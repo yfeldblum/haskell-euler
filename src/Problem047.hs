@@ -16,7 +16,7 @@ import Rising
 import Juke
 
 solutionFrom [] = solutionFrom ["4", "1000000"]
-solutionFrom [sS, maxnS] = solutionGen (read sS) (read maxnS)
+solutionFrom [sS, maxnS] = return $ show $ solutionGen (read sS) (read maxnS)
 
 solutionGen s maxn =
 	uniquePrimeFactorsCountMap maxn

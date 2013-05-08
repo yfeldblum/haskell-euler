@@ -13,9 +13,9 @@ import Data.List ( nub, sort )
 import Juke ( itol )
 
 solutionFrom [] = solutionFrom ["10"]
-solutionFrom [baseS] = solutionGen (read baseS)
+solutionFrom [baseS] = return $ show $ solutionGen (read baseS)
 
-solutionGen base = fromIntegral $ length $ nub $ sort $ pairs base
+solutionGen base = length $ nub $ sort $ pairs base
 
 pairs base =
 	[ n ^ p

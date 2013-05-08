@@ -12,6 +12,6 @@ module Problem002 where
 import Juke (fibonaccis)
 
 solutionFrom [] = solutionFrom ["4000000"]
-solutionFrom [maxnS] = solutionGen (read maxnS)
+solutionFrom [maxnS] = return $ show $ solutionGen (read maxnS)
 
 solutionGen maxn = sum $ filter even $ takeWhile (< maxn) $ fibonaccis

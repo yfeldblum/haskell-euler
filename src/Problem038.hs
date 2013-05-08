@@ -10,7 +10,7 @@ import Data.List( sort )
 import Base( (|>) )
 import Juke( itol, ltoi )
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = maximum pandigitals
 

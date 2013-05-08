@@ -14,7 +14,7 @@ import Data.Ratio
 import Base ( (|>) )
 import Juke ( isPrime, primes'' )
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = 2 * s + 1
 	where s = fst $ head $ filter (\ (s, c) -> c < 0.1) $ groupedAccumFractionPrimes

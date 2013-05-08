@@ -9,7 +9,7 @@ module Problem043 where
 import Base
 import Juke
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = sum $
 	[ ltoi 10 d

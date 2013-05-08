@@ -15,7 +15,7 @@ import Base ( (|>) )
 import Juke ( itol, ltoi, permutations )
 import Sort ( quicksort )
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = sum $ head $ sets
 

@@ -15,7 +15,7 @@ import Base ( (|>), on, dp )
 import Juke ( itol, factorial )
 import qualified Rising ( elem )
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 base = 10
 

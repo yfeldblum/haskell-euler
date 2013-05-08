@@ -13,7 +13,7 @@ import Data.Char (digitToInt)
 
 import Juke (itol)
 
-solutionFrom [] = solution
+solutionFrom [] = return $ show $ solution
 
 solution = sum [ i | i <- [2 .. 1000000], i == f i ] where
 	f i = sum $ map (^ 5) $ itol 10 $ i

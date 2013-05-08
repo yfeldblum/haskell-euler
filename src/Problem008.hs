@@ -12,7 +12,7 @@ module Problem008 where
 import Data.Char
 import Data.List
 
-solutionFrom [] = fromIntegral solution
+solutionFrom [] = return $ show $ solution
 
 solution = maximum $ map product $ map (take 5) $ tails $ nums
 

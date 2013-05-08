@@ -13,7 +13,7 @@ import Base
 import Juke (fractionExpansion, primes)
 
 solutionFrom [] = solutionFrom ["10", "1000"]
-solutionFrom [baseS, maxnS] = solutionGen' (read baseS :: Integer) (read maxnS)
+solutionFrom [baseS, maxnS] = return $ show $ solutionGen' (read baseS :: Integer) (read maxnS)
 
 solutionGen base maxn = fst $ maximumFrom pred $ divns where
 	divns = [ (i, fractionExpansion base 1 i) | i <- takeWhile (< maxn) primes ]
